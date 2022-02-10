@@ -1,0 +1,103 @@
+<html lang='en'>
+  <head>
+    <title>addproject</title>
+
+    <link rel='stylesheet' href='/public/style.css' />
+
+    <!-- Linking bootstrap css cdn -->
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous' />
+
+    <!-- bootstrap icon -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css' />
+    <!-- Linking Bootstrap Javascript cdn -->
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous'></script>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class='navbar navbar-expand-lg navbar-light bg-light' style='height: 7vh'>
+      <div class='container'>
+        <a class='navbar-brand me-5' href='#'>
+          <img src='/public/assets/logo.png' alt='' />
+        </a>
+
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li class='nav-item'>
+              <a class='nav-link active' aria-current='page' href='/home'>Home</a>
+            </li>
+
+            <li class='nav-item ms-3'>
+              <a class='nav-link' aria-current='page' href='/add-project'>Add Project</a>
+            </li>
+          </ul>
+          <div class='d-flex right justify-content-end'>
+            <a href='/contact'>Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- form section -->
+    <form class='mx-auto my-auto' action='' style='width: 400px' method='POST'>
+      <h1>Add My Project</h1>
+      <div class='mb-3'>
+        <label for='project-name'>Project Name</label>
+        <input type='text' class='form-control' id='project-name' placeholder='Your Project Name' name='projectName' />
+      </div>
+
+      <div class='row g-2 mb-3'>
+        <div class='col-md'>
+          <div class=''>
+            <label for='input-start-date'>Start Date</label>
+            <input type='date' class='form-control' id='input-start-date' name='startDate' />
+          </div>
+        </div>
+        <div class='col-md'>
+          <div class=''>
+            <label for='input-end-date'>End Date</label>
+            <input type='date' class='form-control' id='input-end-date' name='endDate' />
+          </div>
+        </div>
+      </div>
+
+      <div class='mb-3'>
+        <label for='input-description' class='form-label'>Description</label>
+        <textarea class='form-control' id='input-description' rows='3' name='description'></textarea>
+      </div>
+
+      <label for=''>Technologies</label>
+      <div class='technologies d-flex mt-2 mb-3'>
+        <div class='skill-one' style='flex: 50%'>
+          <div class='form-check'>
+            <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+            <label>Node Js</label>
+          </div>
+          <div class='form-check'>
+            <input class='form-check-input' type='checkbox' value='' id='flexCheckChecked' checked />
+            <label>React Js</label>
+          </div>
+        </div>
+
+        <div class='skill-two' style='flex: 50%'>
+          <div class='form-check'>
+            <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' />
+            <label>Next Js</label>
+          </div>
+          <div class='form-check'>
+            <input class='form-check-input' type='checkbox' value='' id='flexCheckChecked' checked />
+            <label>TypeScript</label>
+          </div>
+        </div>
+      </div>
+
+      <div class='mb-3'>
+        <label for='formFile' class='form-label'>Upload Image</label>
+        <input class='form-control' type='file' id='formFile' />
+      </div>
+
+      <div class='d-flex justify-content-md-end'>
+        <button class='btn btn-primary px-4 py-2' type='submit'>Add Project</button>
+      </div>
+    </form>
+  </body>
+</html>
