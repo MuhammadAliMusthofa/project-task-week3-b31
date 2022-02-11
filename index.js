@@ -31,13 +31,9 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-app.get('/home', function (req, res) {
-  res.render('home');
-});
-
 //memanipulasi data atau menambahkan data ke list blog apabila ada blog baru yg diinput
 app.get('/home', function (req, res) {
-  console.log(blogs);
+  // console.log(blogs);
 
   let dataBlogs = blogs.map(function (data) {
     return {
@@ -58,7 +54,7 @@ app.get('/add-project', function (req, res) {
 app.get('/delete-project/:index', function (req, res) {
   let index = req.params.index;
 
-  console.log(`Index Data : ${index}`);
+  // console.log(`Index Data : ${index}`);
 
   blogs.splice(index, 1);
   res.redirect('/home');
@@ -80,6 +76,16 @@ app.post('/home', function (req, res) {
 
   blogs.push(blog);
   res.redirect('/home');
+});
+
+//UPDATE PROJECT
+app.get('/edit-project/:index', function (req, res) {
+  let dataUpdae = res.render('update-project', { dataUpdate: dataUpdate });
+  //blom selesai
+});
+
+app.post('/edit-project', function (req, res) {
+  //blom selesai
 });
 
 app.get('/home/:id', function (req, res) {
