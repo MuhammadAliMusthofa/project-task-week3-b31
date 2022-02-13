@@ -44,39 +44,35 @@
         <h2>Contact Me</h2>
       </div>
       <form action="" enctype="multipart/form-data" style="text-align: left">
-        <div>
-          <label for="name" style="font-size: 20px; font-weight: bold">Name</label>
-          <input type="text" id="input-name" placeholder=" Your Name" required />
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="name">
         </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phone" placeholder="your number">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="your email">
+        </div>       
 
         <div>
-          <label for="phone" style="font-size: 20px; font-weight: bold">Phone Number</label>
-          <input type="text" id="input-phone" placeholder=" Your Phone Number" />
-        </div>
-
-        <div>
-          <label for="email" style="font-size: 20px; font-weight: bold">Email</label>
-          <input type="email" id="input-email" placeholder=" Your Email" />
-        </div>
-
-        <div>
-          <label for="subject" style="font-size: 20px; font-weight: bold">Subject</label>
-          <select id="input-subject" style="width: 100%; box-sizing: border-box; border-radius: 5px; margin-bottom: 10px; margin-top: 8px; padding: 8px; background-color: #ede0d4">
-            <option value="">Choose Your Purpose</option>
-            <option value="Lets Talk">Lets Talk</option>
+          <label for="subject">Subject</label>
+          <select class="form-select mb-3" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="Lets Talk">Lets Talk</option>
             <option value="Lets Collaboration">Lets Collaboration</option>
             <option value="I'm Hiring">I'm Hiring</option>
           </select>
         </div>
 
-        <div>
-          <label for="message" style="font-size: 20px; font-weight: bold">Message</label>
-          <textarea
-            placeholder=" Your Message"
-            id="input-message"
-            style="width: 100%; height: 100px; border: 1px solid; box-sizing: border-box; border-radius: 5px; margin-bottom: 10px; margin-top: 8px; padding: 8px; background-color: #ede0d4; resize: none"
-          ></textarea>
+       
+      <div class="mb-3">
+         <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
+        
 
         <button type="button" onclick="showData()">Submit</button>
       </form>
