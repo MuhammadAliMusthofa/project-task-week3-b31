@@ -76,9 +76,9 @@ app.get('/delete-project/:index', function (req, res) {
   res.redirect('/home');
 });
 
-app.get('/add-project', function (req, res) {
-  res.render('add-project');
-});
+// app.get('/add-project', function (req, res) {
+//   res.render('add-project');
+// });
 //mengambil data dari inputan blog agar bisa di tambahkan di list blog
 app.post('/add-project', function (req, res) {
   let project = req.body.projectName;
