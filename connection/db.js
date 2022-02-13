@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 
 //setup connection pool
 const dbPool = new Pool({
-  database: 'project', //nama databaseku
+  database: 'projects', //nama databaseku
   port: 5432,
   user: 'postgres', //liat di postgree yg kita buat tabenya
   password: 'Goku_roko786', //password yg kita masukin saat pertama kali install pg
