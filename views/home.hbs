@@ -76,29 +76,29 @@
     <section class='bg-white mt-5'>
       <h1 class='text-center mb-5'>My Project</h1>
       {{! card project }}
+      <div class='d-flex justify-content-around flex-row flex-wrap'>
         {{#each blogs}}
-      <div class='d-flex flex-row justify-content-around flex-wrap'>
           <div id='contents-blogs' class='mb-4 ms-3'>
             <div class='card h-100 p-2' style='width: 350px'>
               <img src='/public/assets/ggh.jpg' class='card-img-top' alt='not' />
               <div class='card-body'>
-                <h3 class='blog-list text-center '>
-                  <a class="text-decoration-none badge-dark "href='/blog-project-detail' target='_blank'>{{this.projectName}}</a>
+                <h3 class='text-center'>
+                  <a class='text-decoration-none badge-dark' href='/blog-project-detail' target='_blank'>{{this.projectName}}</a>
                 </h3>
                 <p class='mb-1'>Duration :</p>
                 <p class='' style='color: grey'>{{this.duration}}</p>
                 <p class='mt-3'>{{this.description}}</p>
                 {{#if isLogin}}
-                  <div class='d-flex justify-content-center '>
-                    <a href="" class="me-3 border-2 rounded bg-success py-2 px-4 badge text-decoration-none ">Edit</a>
-                    <a href="/delete-project/{{@index}}" class="border-2 rounded bg-danger py-2 px-4 text-decoration-none badge ">Delete Project</a>
+                  <div class='d-flex justify-content-center'>
+                    <a href='' class='me-3 border-2 rounded bg-success py-2 px-4 badge text-decoration-none'>Edit</a>
+                    <a href='/delete-project/{{@index}}' class='border-2 rounded bg-danger py-2 px-4 text-decoration-none badge'>Delete Project</a>
                   </div>
                 {{/if}}
               </div>
             </div>
           </div>
-        {{/each}}
 
+        {{/each}}
       </div>
     </section>
   </body>

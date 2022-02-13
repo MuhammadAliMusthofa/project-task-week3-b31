@@ -98,7 +98,7 @@ app.post('/home', function (req, res) {
     projectName,
     startDate,
     endDate,
-    duration,
+    duration: getDurationTime(duration),
     description,
     // image,
   };
@@ -109,12 +109,32 @@ app.post('/home', function (req, res) {
 
 // //UPDATE PROJECT
 // app.get('/edit-project/:index', function (req, res) {
-//   let dataUpdae = res.render('update-project', { dataUpdate: dataUpdate });
+//   let dataUpdate = req.params.index
+//   res.render('update-project', { dataUpdate: dataUpdate });
 //   //blom selesai
+//   app
 // });
 
 // app.post('/edit-project', function (req, res) {
-//   //blom selesai
+//   let projectName = req.body.projectName;
+//   let startDate = new Date(req.body.startDate);
+//   let endDate = new Date(req.body.endDate);
+//   let description = req.body.description;
+//   // let image = req.file.path;
+//   // image = URL.createObjectURL(image.files[index]);
+//   let duration = new Date(endDate) - new Date(startDate);
+
+//   let blog = {
+//     projectName,
+//     startDate,
+//     endDate,
+//     duration: getDurationTime(duration),
+//     description,
+//     // image,
+//   };
+
+//   blogs.push(blog);
+//   res.redirect('/home');
 // });
 
 app.get('/home/:id', function (req, res) {
@@ -134,24 +154,20 @@ app.listen(port, function () {
   console.log(`server running on port ${port}`);
 });
 
-function showDuration(req, res) {
-  const milisecond = 1000;
-  const secondsInMinute = 60;
-  const minutesInHour = 60;
-  const secondsInHour = secondsInMinute * minutesInHour;
+function getDurationTime(duration) {
+  const miliseconds = 1000;
+  const secondsInMinutes = 60;
+  const minutesInHours = 60;
+  const secondsInHours = secondsInMinutes * minutesInHours;
   const hoursInDay = 24;
-  //waktu saat ini dikurangi waktu post
 
-  let startPost = req.body.startDate;
-  let endPost = req.body.endDate;
+  let timeDuration = new Date(duration);
 
-  var ms = new Date(endPost).getTime() - new Date(startPost).getTime();
-  let durasi = ms / milisecond / secondsInHour / hoursInDay;
-  durasi += +1;
+  let dayDuration = timeDuration / (miliseconds * secondsInHours * hoursInDay);
 
-  if (durasi >= 30) {
-    return `1 Month ${duration - 30} day`;
+  if (dayDuration >= 30) {
+    return Math.floor(dayDuration / 30) + ' Months';
   } else {
-    return ` ${durasi} day`;
+    return Math.floor(dayDuration) + ' Days';
   }
 }
