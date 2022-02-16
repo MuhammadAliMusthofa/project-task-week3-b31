@@ -86,12 +86,12 @@
                   <a class="text-decoration-none badge-dark "href='/blog-project-detail' target='_blank'>{{this.projectName}}</a>
                 </h3>
                 <p class='mb-1'>Duration :</p>
-                <p class='' style='color: grey'>{{this.duration}}</p>
+                <p class='' style='color: grey'>{{this.startDate}} s/d  {{this.endDate}}</p>
                 <p class='mt-3'>{{this.description}}</p>
                 {{#if isLogin}}
                   <div class='d-flex justify-content-center '>
-                    <a href="" class="me-3 border-2 rounded bg-success py-2 px-4 badge text-decoration-none ">Edit</a>
-                    <a href="/delete-project/{{@index}}" class="border-2 rounded bg-danger py-2 px-4 text-decoration-none badge ">Delete Project</a>
+                    <a href="/update-project/{{this.id}}" class="me-3 border-2 rounded bg-success py-2 px-4 badge text-decoration-none ">Edit</a>
+                    <a href="/delete-project/{{this.id}}" class="border-2 rounded bg-danger py-2 px-4 text-decoration-none badge ">Delete Project</a>
                   </div>
                 {{/if}}
               </div>

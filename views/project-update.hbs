@@ -38,31 +38,31 @@
     </nav>
 
     <!-- form section -->
-    <form class='mx-auto my-auto' action='/home' style='width: 400px' method='post'>
+    <form class='mx-auto my-auto' action='/update-project/{{blog.id}}' style='width: 400px' method='post'>
       <h1>Add My Project</h1>
       <div class='mb-3'>
         <label for='project-name'>Project Name</label>
-        <input type='text' class='form-control' id='project-name' placeholder='Your Project Name' name='projectName' />
+        <input type='text' class='form-control' id='project-name' placeholder='Your Project Name' name='projectName' value='{{blog.projectName}}' />
       </div>
 
       <div class='row g-2 mb-3'>
         <div class='col-md'>
           <div class=''>
             <label for='input-start-date'>Start Date</label>
-            <input type='date' class='form-control' id='input-start-date' name='startDate' />
+            <input type='date' class='form-control' id='input-start-date' name='startDate' value='{{blog.startDate}}' />
           </div>
         </div>
         <div class='col-md'>
           <div class=''>
             <label for='input-end-date'>End Date</label>
-            <input type='date' class='form-control' id='input-end-date' name='endDate' />
+            <input type='date' class='form-control' id='input-end-date' name='endDate' value='{{blog.endDate}}' />
           </div>
         </div>
       </div>
 
       <div class='mb-3'>
         <label for='input-description' class='form-label'>Description</label>
-        <textarea class='form-control' id='input-description' rows='3' name='description'></textarea>
+        <textarea class='form-control' id='input-description' rows='3' name='description'>{{blog.description}}</textarea>
       </div>
 
       <label for=''>Technologies</label>
